@@ -1,0 +1,29 @@
+<section class="page-heading">
+  <p class="eyebrow">Favoritos</p>
+  <h2>Mis heroes favoritos</h2>
+  <p>{{ message() }}</p>
+</section>
+
+@if (!auth.estaAutenticado()) {
+  <a class="catalog-link" routerLink="/catalogo">Volver al catalogo</a>
+}
+
+@if (auth.estaAutenticado()) {
+  <div class="toolbar">
+    <button type="button" (click)="loadFavorites()" [disabled]="loading()">Actualizar favoritos</button>
+  </div>
+}
+
+<div class="hero-grid">
+  @for (hero of heroes(); track hero.id) {
+    <article class="hero-card">
+      <img [src]="imageUrl(hero)" [alt]="hero.nombre" (error)="usePlaceholder($event)">
+      <div class="hero-content">
+        <h3>{{ hero.nombre }}</h3>
+        <p><strong>Poder:</strong> {{ hero.poder }}</p>
+        <p><strong>Debilidad:</strong> {{ hero.debilidad || 'Sin registrar' }}</p>
+        <button type="button" class="remove-button" (click)="removeFavorite(hero)">Eliminar de favoritos</button>
+      </div>
+    </article>
+  }
+</div>

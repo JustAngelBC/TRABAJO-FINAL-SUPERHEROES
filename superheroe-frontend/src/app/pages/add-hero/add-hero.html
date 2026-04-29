@@ -1,0 +1,46 @@
+<section class="page-heading">
+  <p class="eyebrow">Nuevo registro</p>
+  <h2>Agregar superheroe</h2>
+  <p>Este formulario envia la informacion al endpoint protegido <code>/api/heroes</code>.</p>
+</section>
+
+@if (!auth.estaAutenticado()) {
+  <div class="warning">
+    Para agregar un superheroe necesitas iniciar sesion primero.
+    <a routerLink="/catalogo">Volver al catalogo</a>
+  </div>
+}
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="hero-form">
+  <label>
+    Nombre del superheroe *
+    <input type="text" formControlName="nombre" placeholder="Ej. Linterna Verde">
+  </label>
+
+  <label>
+    Poder principal *
+    <textarea rows="3" formControlName="poder" placeholder="Describe sus poderes"></textarea>
+  </label>
+
+  <label>
+    Fortaleza
+    <input type="text" formControlName="fortaleza" placeholder="Ej. Voluntad inquebrantable">
+  </label>
+
+  <label>
+    Resistencia
+    <input type="text" formControlName="resistencia" placeholder="Ej. Alta resistencia fisica">
+  </label>
+
+  <label>
+    Debilidad
+    <input type="text" formControlName="debilidad" placeholder="Ej. Energia amarilla">
+  </label>
+
+  <label>
+    Imagen URL o archivo *
+    <input type="text" formControlName="imagen_url" placeholder="Placeholder.png o https://...">
+  </label>
+
+  <button type="submit" [disabled]="saving()">{{ saving() ? 'Guardando...' : 'Guardar superheroe' }}</button>
+</form>

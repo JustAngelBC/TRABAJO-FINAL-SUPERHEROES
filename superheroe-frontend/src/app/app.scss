@@ -1,0 +1,149 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.app-header {
+  align-items: stretch;
+  background: radial-gradient(circle at 10% 20%, rgba(255, 183, 3, 0.28), transparent 28%), linear-gradient(135deg, #14213d 0%, #3f51b5 100%);
+  color: #ffffff;
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  padding: clamp(1.3rem, 4vw, 3rem);
+}
+
+.hero-copy p {
+  color: #ffb703;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.4rem, 7vw, 5.7rem);
+  line-height: 0.95;
+  margin: 0 0 1rem;
+  max-width: 900px;
+}
+
+.hero-copy span {
+  color: #dbe4f0;
+  display: block;
+  font-size: 1.1rem;
+  max-width: 620px;
+}
+
+.session-card {
+  align-self: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  padding: 1.1rem;
+}
+
+.session-card h2,
+.session-card p {
+  margin-top: 0;
+}
+
+.session-card form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.session-card input {
+  border: 0;
+  border-radius: 12px;
+  font: inherit;
+  padding: 0.8rem 1rem;
+}
+
+.session-card button,
+.main-nav a {
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 900;
+  padding: 0.8rem 1rem;
+}
+
+.session-card button:not(.link-button):not(.secondary) {
+  background: #f77f00;
+  color: #ffffff;
+}
+
+.secondary,
+.link-button {
+  background: #ffffff;
+  color: #14213d;
+  margin-top: 0.7rem;
+}
+
+.session-name {
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+.main-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dbe4f0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.main-nav a {
+  background: #eef2f8;
+  color: #14213d;
+  text-decoration: none;
+}
+
+.main-nav a.active {
+  background: #3f51b5;
+  color: #ffffff;
+}
+
+.toast {
+  background: #14213d;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(20, 33, 61, 0.25);
+  color: #ffffff;
+  font-weight: 800;
+  padding: 1rem 1.2rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  z-index: 50;
+}
+
+.toast.success {
+  background: #2d6a4f;
+}
+
+.toast.error {
+  background: #d62828;
+}
+
+.app-main {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+@media (max-width: 820px) {
+  .app-header {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    position: static;
+  }
+}

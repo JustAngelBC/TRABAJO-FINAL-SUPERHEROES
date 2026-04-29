@@ -1,0 +1,30 @@
+<section class="page-heading">
+  <p class="eyebrow">Catalogo general</p>
+  <h2>Superheroes disponibles</h2>
+  <p>Consulta los 12 heroes del backend en una distribucion responsiva de 4 columnas.</p>
+</section>
+
+<div class="toolbar">
+  <button type="button" (click)="loadCatalog()" [disabled]="loading()">Actualizar catalogo</button>
+  <span>{{ message() }}</span>
+</div>
+
+@if (loading()) {
+  <p class="status">Cargando informacion desde el servidor...</p>
+}
+
+<div class="hero-grid">
+  @for (hero of heroes(); track hero.id) {
+    <article class="hero-card">
+      <img [src]="imageUrl(hero)" [alt]="hero.nombre" (error)="usePlaceholder($event)">
+      <div class="hero-content">
+        <h3>{{ hero.nombre }}</h3>
+        <p><strong>Poder:</strong> {{ hero.poder }}</p>
+        <p><strong>Fortaleza:</strong> {{ hero.fortaleza || 'Sin registrar' }}</p>
+        <p><strong>Resistencia:</strong> {{ hero.resistencia || 'Sin registrar' }}</p>
+        <p><strong>Debilidad:</strong> {{ hero.debilidad || 'Sin registrar' }}</p>
+        <button type="button" class="favorite-button" (click)="addToFavorites(hero)">Anadir a favoritos</button>
+      </div>
+    </article>
+  }
+</div>
