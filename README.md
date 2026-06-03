@@ -72,6 +72,4 @@ Estas son las rutas que se pueden probar en el navegador:
 
 El proyecto ya quedo funcionando completo. Se probo el backend, el frontend, las rutas, el login, el registro, favoritos y el alta de superheroes.
 
-Tambien el catalogo quedo con 12 heroes para que se vea como una cuadricula de 4 columnas en pantalla grande, como se pidio en el trabajo.
-
-En resumen, el proyecto ya cumple con lo necesario para entregar el parcial final.
+Tambien el catalogo quedo con 12 heroes para que se vea como una cuadricula de 4 columnas en pantalla grande, como se pidio en el trabajo de acuerdo al word que usted nos proporcionó. 
