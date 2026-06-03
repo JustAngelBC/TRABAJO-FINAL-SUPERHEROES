@@ -1,0 +1,73 @@
+.registration-container {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(20, 33, 61, 0.16);
+  margin: 2rem auto;
+  max-width: 520px;
+  padding: 2rem;
+  text-align: center;
+}
+
+h2 {
+  color: #14213d;
+  margin-bottom: 0.5rem;
+}
+
+.hero-form,
+label {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hero-form {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+label {
+  color: #14213d;
+  font-weight: 800;
+}
+
+input {
+  border: 1px solid #c8d3e1;
+  border-radius: 12px;
+  font: inherit;
+  padding: 0.85rem 1rem;
+}
+
+button {
+  background: #3f51b5;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 900;
+  padding: 0.9rem 1.2rem;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.feedback {
+  border-radius: 8px;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.msg-success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.msg-error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+a {
+  color: #3f51b5;
+  font-weight: 900;
+}

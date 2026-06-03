@@ -1,0 +1,31 @@
+<section class="login-page">
+  <div class="login-card">
+    <div class="login-header">
+      <span class="shield-icon">SH</span>
+      <h2>Acceso a la Atalaya</h2>
+      <p>Ingresa tus credenciales para gestionar favoritos y heroes.</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <label>
+        Email
+        <input type="email" formControlName="email" placeholder="heroe@liga.com">
+      </label>
+
+      <label>
+        Password
+        <input type="password" formControlName="password" placeholder="********">
+      </label>
+
+      <button type="submit" [disabled]="loading() || loginForm.invalid">
+        {{ loading() ? 'Entrando...' : 'Entrar al sistema' }}
+      </button>
+
+      @if (errorMessage()) {
+        <div class="error-box">{{ errorMessage() }}</div>
+      }
+    </form>
+
+    <p class="login-footer">No tienes cuenta? <a routerLink="/user-registration">Registrate aqui</a></p>
+  </div>
+</section>

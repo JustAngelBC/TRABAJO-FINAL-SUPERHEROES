@@ -1,0 +1,25 @@
+.about-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(20, 33, 61, 0.14);
+  margin: 1rem auto;
+  max-width: 820px;
+  padding: 2rem;
+}
+
+.eyebrow {
+  color: #ffb703;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #14213d;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: 0 0 1rem;
+}
+
+li {
+  margin: 0.7rem 0;
+}

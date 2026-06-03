@@ -1,7 +1,7 @@
 <header class="app-header">
   <div class="hero-copy">
     <h1>{{ title() }}</h1>
-    <span>Proyecto de superheroes SEGUNDO PARCIAL.</span>
+    <span>Proyecto final de superheroes con Angular, Express, Knex y PostgreSQL.</span>
   </div>
 
   <section class="session-card">
@@ -9,28 +9,23 @@
       <p class="session-name">Sesion activa: <strong>{{ auth.nombreUsuario() }}</strong></p>
       <button type="button" class="secondary" (click)="cerrarSesion()">Cerrar sesion</button>
     } @else {
-      <h2>{{ modoRegistro() ? 'Registrar usuario' : 'Iniciar sesion' }}</h2>
-      <form [formGroup]="sessionForm" (ngSubmit)="submitSesion()">
-        @if (modoRegistro()) {
-          <input type="text" formControlName="nombre" placeholder="Nombre">
-        }
-        <input type="email" formControlName="email" placeholder="Correo electronico">
-        <input type="password" formControlName="password" placeholder="Contrasena">
-        <button type="submit" [disabled]="procesandoSesion()">
-          {{ procesandoSesion() ? 'Procesando...' : (modoRegistro() ? 'Registrarme' : 'Entrar') }}
-        </button>
-      </form>
-      <button type="button" class="link-button" (click)="cambiarModoSesion()">
-        {{ modoRegistro() ? 'Ya tengo cuenta' : 'Crear una cuenta' }}
-      </button>
+      <h2>Acceso de usuario</h2>
+      <p>Inicia sesion para guardar favoritos o registrar nuevos heroes.</p>
+      <a routerLink="/login" class="session-action">Iniciar sesion</a>
     }
   </section>
 </header>
 
 <nav class="main-nav" aria-label="Navegacion principal">
-  <a routerLink="/catalogo" routerLinkActive="active">Ver catalogo general</a>
-  <a routerLink="/favoritos" routerLinkActive="active">Mis heroes favoritos</a>
-  <a routerLink="/agregar-heroe" routerLinkActive="active">Agregar superheroe</a>
+  <a routerLink="/catalog" routerLinkActive="active">Catalogo</a>
+  <a routerLink="/user-registration" routerLinkActive="active">Alta de usuarios</a>
+  <a routerLink="/about" routerLinkActive="active">Sobre el proyecto</a>
+  @if (!auth.estaAutenticado()) {
+    <a routerLink="/login" routerLinkActive="active">Iniciar sesion</a>
+  } @else {
+    <a routerLink="/add-hero" routerLinkActive="active">Nuevo heroe</a>
+    <a routerLink="/favoritos" routerLinkActive="active">Mis favoritos</a>
+  }
 </nav>
 
 @if (notify.message()) {
@@ -42,3 +37,7 @@
 <main class="app-main">
   <router-outlet />
 </main>
+
+<footer class="main-footer">
+  <p>&copy; 2025 Superhero Project - Desarrollado con Angular & Knex.js</p>
+</footer>

@@ -1,0 +1,33 @@
+<section class="registration-container">
+  <h2>Crear nueva cuenta de heroe</h2>
+  <p>Registrate para gestionar tus superheroes favoritos.</p>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="hero-form">
+    <label>
+      Nombre completo
+      <input type="text" formControlName="nombre" placeholder="Ej. Tony Stark">
+    </label>
+
+    <label>
+      Correo electronico
+      <input type="email" formControlName="email" placeholder="heroe@avengers.com">
+    </label>
+
+    <label>
+      Contrasena
+      <input type="password" formControlName="password" placeholder="******">
+    </label>
+
+    <button type="submit" [disabled]="loading() || registerForm.invalid">
+      {{ loading() ? 'Registrando...' : 'Registrar usuario' }}
+    </button>
+
+    @if (message()) {
+      <div class="feedback" [class.msg-success]="!isError()" [class.msg-error]="isError()">
+        {{ message() }}
+      </div>
+    }
+  </form>
+
+  <p class="login-link">Ya tienes cuenta? <a routerLink="/login">Inicia sesion</a></p>
+</section>

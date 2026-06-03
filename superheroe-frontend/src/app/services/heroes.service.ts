@@ -18,13 +18,13 @@ export class HeroesService {
 
   getImageUrl(imageUrl: string | null | undefined): string {
     if (!imageUrl) {
-      return '/images/Placeholder.png';
+      return '/assets/images/Placeholder.png';
     }
 
-    if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://') || imageUrl.startsWith('/images/')) {
+    if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://') || imageUrl.startsWith('/assets/')) {
       return imageUrl;
     }
 
-    return `/images/${imageUrl}`;
+    return `/assets/images/${imageUrl}`;
   }
 }

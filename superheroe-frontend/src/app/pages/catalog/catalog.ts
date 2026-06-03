@@ -61,6 +61,6 @@ export class CatalogPage {
   }
 
   usePlaceholder(event: Event) {
-    (event.target as HTMLImageElement).src = '/images/Placeholder.png';
+    (event.target as HTMLImageElement).src = '/assets/images/Placeholder.png';
   }
 }

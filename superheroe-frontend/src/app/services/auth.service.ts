@@ -40,6 +40,10 @@ export class AuthService {
     this.nombreUsuario.set(null);
   }
 
+  isLoggedIn(): boolean {
+    return this.estaAutenticado();
+  }
+
   private guardarSesion(token: string, nombre: string) {
     localStorage.setItem('token_superheroes', token);
     localStorage.setItem('nombre_superheroes', nombre);
